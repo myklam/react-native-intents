@@ -1,4 +1,3 @@
-
 # react-native-intents
 
 ## Getting started
@@ -35,4 +34,3 @@ import RNIntents from 'react-native-intents';
 // TODO: What to do with the module?
 RNIntents;
 ```
-  
