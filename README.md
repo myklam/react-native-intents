@@ -32,10 +32,20 @@ The inspiration for this project is the [Expo](https://expo.io/) framework, whic
 
 
 ## Usage
+
+You need to look up the hardcoded strings for Intent actions,and categories. Those can be found on the [Android Developer Intents](https://developer.android.com/reference/android/content/Intent.html) page
+
+This example would allow you to redirect users to the homescreen:
+
 ```javascript
 import RNIntents from 'react-native-intents';
 
-RNIntents.launchIntent(action, category);
+function goHome() {
+	const ACTION_MAIN = "android.intent.action.MAIN";
+	const CATEGORY_HOME = "android.intent.category.HOME";
+
+	RNIntents.launchIntent(action, category);
+}
 ```
 
 ## TODO:
