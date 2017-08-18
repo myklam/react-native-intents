@@ -44,9 +44,20 @@ function goHome() {
 	const ACTION_MAIN = "android.intent.action.MAIN";
 	const CATEGORY_HOME = "android.intent.category.HOME";
 
-	RNIntents.launchIntent(action, category);
+	RNIntents.launchIntent(ACTION_MAIN, CATEGORY_HOME);
 }
 ```
+
+The other method currently provided allows you to kill you application after launching the intent.
+
+
+```javascript
+function goHomeAndKillApplication() {
+	const ACTION_MAIN = "android.intent.action.MAIN";
+	const CATEGORY_HOME = "android.intent.category.HOME";
+
+    RNIntents.launchIntentAndKillActivity(ACTION_MAIN, CATEGORY_HOME);
+}
 
 ## TODO:
 - [ ] Export strings for commonly used Intents, Categories, and Flags

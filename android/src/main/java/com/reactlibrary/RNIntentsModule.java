@@ -8,6 +8,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 
 import android.content.Intent;
+import android.app.Activity;
 
 public class RNIntentsModule extends ReactContextBaseJavaModule {
 
@@ -32,5 +33,21 @@ public class RNIntentsModule extends ReactContextBaseJavaModule {
     }
     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     reactContext.startActivity(i);
+  }
+
+  @ReactMethod
+  public void launchIntentAndKillActivity(String action, String category) {
+    Activity activity = getCurrentActivity();
+    Intent i = new Intent(action);
+
+
+    if (category != null) {
+      i.addCategory(category);
+    }
+    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    reactContext.startActivity(i);
+    if (activity != null) {
+      activity.finishAndRemoveTask();
+    }
   }
 }
