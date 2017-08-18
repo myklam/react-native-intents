@@ -58,7 +58,7 @@ function goHomeAndKillApplication() {
 
     RNIntents.launchIntentAndKillActivity(ACTION_MAIN, CATEGORY_HOME);
 }
-
+```
 ## TODO:
 - [ ] Export strings for commonly used Intents, Categories, and Flags
 - [ ] Edit Java method to handle calling launchIntents with different args. Currently, you must supply ```null``` if you don't want to include a category
