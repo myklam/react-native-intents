@@ -1,5 +1,9 @@
 # react-native-intents
 
+react-native-intents allows you to launch intents from within you React Native app. The module only works for Android. There is not a lot to it, and I don't have a ton of time to work on it. If there are issues, let me know, and I'd love some help developing it.
+
+The inspiration for this project is the [Expo](https://expo.io/) framework, which offers a very similar functionality using the [IntentLauncherAndroid](https://docs.expo.io/versions/latest/sdk/intent-launcher.html). I just wanted a way to perform this action without installing Expo.
+
 ## Getting started
 
 `$ npm install react-native-intents --save`
@@ -31,6 +35,9 @@
 ```javascript
 import RNIntents from 'react-native-intents';
 
-// TODO: What to do with the module?
-RNIntents;
+RNIntents.launchIntent(action, category);
 ```
+
+## TODO:
+- [] Export strings for commonly used Intents, Categories, and Flags
+- [] Edit Java method to handle calling launchIntents with different args. Currently, you must supply ```null``` if you don't want to include a category
