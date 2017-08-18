@@ -7,6 +7,8 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.Promise;
 
+import android.content.Intent;
+
 public class RNIntentsModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
@@ -22,7 +24,13 @@ public class RNIntentsModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void concatStr(String string1, String string2, Promise promise) {
-    promise.resolve(string1 + " " + string2);
+  public void launchIntent(String action, String category) {
+    Intent i = new Intent(action);
+
+    if (category != null) {
+      i.addCategory(category);
+    }
+    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    reactContext.startActivity(i);
   }
 }
