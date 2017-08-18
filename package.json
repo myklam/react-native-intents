@@ -1,17 +1,15 @@
-
 {
   "name": "react-native-intents",
   "version": "1.0.0",
-  "description": "",
+  "description": "A React Native module for launching Android intents. This does not work for IOS",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myklam/react-native-intents"
   },
-  "keywords": [
-    "react-native"
-  ],
-  "author": "",
-  "license": "",
+  "keywords": ["react-native", "android", "native-module", "device"],
+  "author": "Michael Lamb <mlamb892@gmail.com> (https://github.com/myklam)",
+  "license": "MIT",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
